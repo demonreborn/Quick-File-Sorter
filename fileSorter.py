@@ -6,30 +6,17 @@ import configparser
 
 # Get saved variables from config file.
 config = configparser.ConfigParser() 
-configRoot = "C:\\Users\\RCAdmin\Desktop\\My Python Scripts\\config\\config.ini"
+configRoot = "config.ini"
 config.read(configRoot)
 savedSourceFolder = config.get("folderconfig", "savedDefaultLocationPath")
 savedOutputFolder = config.get("folderconfig", "savedDefaultTargetOutputPath")
-
-# Font color and bold class.
-class color: 
-   PURPLE = '\033[95m'
-   CYAN = '\033[96m'
-   DARKCYAN = '\033[36m'
-   BLUE = '\033[94m'
-   GREEN = '\033[92m'
-   YELLOW = '\033[93m'
-   RED = '\033[91m'
-   BOLD = '\033[1m'
-   UNDERLINE = '\033[4m'
-   END = '\033[0m'
 
 
 # Begin Function
 def sort_files():
     print("Would you like to update your default folder paths?")
-    print("(1) Default Sorting Folder: " + color.GREEN + savedSourceFolder + color.END)
-    print("(2) Default Output Folder: " + color.GREEN + savedOutputFolder + color.END)
+    print("(1) Default Sorting Folder: " + savedSourceFolder)
+    print("(2) Default Output Folder: " + savedOutputFolder)
     updatePaths = input("1 for Sorting path, 2 for Output path. 0 to skip: ")
     if updatePaths == "1":
         newSortPath = input("Please enter the full path to the folder: ")
@@ -59,7 +46,7 @@ def sort_files():
         time.sleep(3)
         
 
-    print("Please Note that you will need to specify the" + color.BOLD + color.RED + " full root path of the folder" + color.END + " you wish to sort.\n" + color.BOLD + "Example: C:/Users/Desktop/MyFolder" + color.END + "\nOtherwise Enter 1 for Default Source Folder.")
+    print("Please Note that you will need to specify the" + " full root path of the folder you wish to sort.\n" + "Example: C:/Users/Desktop/MyFolder" + "\nOtherwise Enter 1 for Default Source Folder.")
     targetFolder = input("Target Folder Path: ") # Get Target Folder Path
     print("\nEnter 1 for Default Target Destination.")
     targetDest = input("Select File Desination: ") # Get Destination Folder Path
