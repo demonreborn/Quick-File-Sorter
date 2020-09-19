@@ -34,7 +34,6 @@ def sort_files():
     if updatePaths == "2":
         newOutputPath = input("Please enter the full path to the folder:")
         # Rebuild Entire Config I guess. :(
-        # Rebuild Entire Config I guess. :(
         configFile = open(configRoot, "r")
         list_lines = configFile.readlines()
         list_lines[2] = "savedDefaultTargetOutputPath = " + newOutputPath + "\n"
